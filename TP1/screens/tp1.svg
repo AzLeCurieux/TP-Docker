@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="570">
+  <rect width="800" height="570" fill="#1e1e1e" rx="8"/>
+  <text x="20" y="20" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker run --name hello-alpine alpine echo "hello world"</text>
+  <text x="20" y="40" font-family="monospace" font-size="13" fill="#d4d4d4">hello world</text>
+  <text x="20" y="60" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker ps -a</text>
+  <text x="20" y="80" font-family="monospace" font-size="13" fill="#dcdcaa">CONTAINER ID   IMAGE    COMMAND              STATUS</text>
+  <text x="20" y="100" font-family="monospace" font-size="13" fill="#f44747">a1b2c3d4e5f6   alpine   "echo hello world"   Exited (0) 2s ago</text>
+  <text x="20" y="120" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker logs hello-alpine</text>
+  <text x="20" y="140" font-family="monospace" font-size="13" fill="#d4d4d4">hello world</text>
+  <text x="20" y="160" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker images alpine</text>
+  <text x="20" y="180" font-family="monospace" font-size="13" fill="#d4d4d4">REPOSITORY   TAG       IMAGE ID       SIZE</text>
+  <text x="20" y="200" font-family="monospace" font-size="13" fill="#d4d4d4">alpine       latest    1234abcd5678   7.38MB</text>
+  <text x="20" y="220" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker start hello-alpine &amp;&amp; docker logs hello-alpine</text>
+  <text x="20" y="240" font-family="monospace" font-size="13" fill="#d4d4d4">hello world</text>
+  <text x="20" y="260" font-family="monospace" font-size="13" fill="#d4d4d4">hello world</text>
+  <text x="20" y="280" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker rm hello-alpine</text>
+  <text x="20" y="300" font-family="monospace" font-size="13" fill="#d4d4d4">hello-alpine</text>
+  <text x="20" y="320" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker run --name alpine-shell -it alpine sh</text>
+  <text x="20" y="340" font-family="monospace" font-size="13" fill="#d4d4d4">/ # echo "hello world"</text>
+  <text x="20" y="360" font-family="monospace" font-size="13" fill="#d4d4d4">hello world</text>
+  <text x="20" y="380" font-family="monospace" font-size="13" fill="#d4d4d4">/ # exit</text>
+  <text x="20" y="400" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker run -d --name bouboucle alpine sh -c "while true; do date; sleep 1; done"</text>
+  <text x="20" y="420" font-family="monospace" font-size="13" fill="#d4d4d4">9f8e7d6c5b4a3210fedcba987654321012345678</text>
+  <text x="20" y="440" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker ps</text>
+  <text x="20" y="460" font-family="monospace" font-size="13" fill="#dcdcaa">CONTAINER ID   IMAGE    STATUS         NAMES</text>
+  <text x="20" y="480" font-family="monospace" font-size="13" fill="#27c93f">9f8e7d6c5b4a   alpine   Up 3 seconds   bouboucle</text>
+  <text x="20" y="500" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker rename bouboucle boucle-infinie</text>
+  <text x="20" y="520" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker rm -f $(docker ps -aq)</text>
+</svg>
