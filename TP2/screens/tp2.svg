@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="470">
+  <rect width="800" height="470" fill="#1e1e1e" rx="8"/>
+  <text x="20" y="20" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker volume create tp2-volume</text>
+  <text x="20" y="40" font-family="monospace" font-size="13" fill="#d4d4d4">tp2-volume</text>
+  <text x="20" y="60" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker run -d --name writer -v tp2-volume:/tp2 alpine sh -c "while true; do date &gt;&gt; /tp2/file.txt; sleep 1; done"</text>
+  <text x="20" y="80" font-family="monospace" font-size="13" fill="#d4d4d4">3a4b5c6d7e8f...</text>
+  <text x="20" y="100" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker run -d --name reader -v tp2-volume:/tp2:ro alpine sh -c "while true; do tail -1 /tp2/file.txt; sleep 1; done"</text>
+  <text x="20" y="120" font-family="monospace" font-size="13" fill="#d4d4d4">7f8e9d0c1b2a...</text>
+  <text x="20" y="140" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker logs -f reader</text>
+  <text x="20" y="160" font-family="monospace" font-size="13" fill="#d4d4d4">Sat Mar 21 10:32:01 UTC 2026</text>
+  <text x="20" y="180" font-family="monospace" font-size="13" fill="#d4d4d4">Sat Mar 21 10:32:02 UTC 2026</text>
+  <text x="20" y="200" font-family="monospace" font-size="13" fill="#d4d4d4">Sat Mar 21 10:32:03 UTC 2026</text>
+  <text x="20" y="220" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker run -d --name data-container -v /data alpine sleep infinity</text>
+  <text x="20" y="240" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker run -d --name app-container --volumes-from data-container alpine sleep infinity</text>
+  <text x="20" y="260" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker exec app-container sh -c 'echo "Hello from app" &gt; /data/hello.txt'</text>
+  <text x="20" y="280" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker exec data-container cat /data/hello.txt</text>
+  <text x="20" y="300" font-family="monospace" font-size="13" fill="#d4d4d4">Hello from app</text>
+  <text x="20" y="320" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker cp data-container:/data/hello.txt .</text>
+  <text x="20" y="340" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker rm -f $(docker ps -aq)</text>
+  <text x="20" y="360" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker volume prune -f</text>
+  <text x="20" y="380" font-family="monospace" font-size="13" fill="#d4d4d4">Deleted Volumes:</text>
+  <text x="20" y="400" font-family="monospace" font-size="13" fill="#d4d4d4">tp2-volume</text>
+  <text x="20" y="420" font-family="monospace" font-size="13" fill="#d4d4d4">Total reclaimed space: 1.2kB</text>
+</svg>
