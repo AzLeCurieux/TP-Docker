@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="310">
+  <rect width="800" height="310" fill="#1e1e1e" rx="8"/>
+  <text x="20" y="20" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker network create mynet</text>
+  <text x="20" y="40" font-family="monospace" font-size="13" fill="#d4d4d4">a1b2c3d4e5f6789...</text>
+  <text x="20" y="60" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker run -d --name web --network mynet -v ~/tp3-site:/usr/share/nginx/html:ro nginx</text>
+  <text x="20" y="80" font-family="monospace" font-size="13" fill="#d4d4d4">b2c3d4e5f6789a...</text>
+  <text x="20" y="100" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker run --rm --name client --network mynet alpine sh -c "wget -qO- http://web"</text>
+  <text x="20" y="120" font-family="monospace" font-size="13" fill="#d4d4d4">&amp;lt;html&amp;gt;</text>
+  <text x="20" y="140" font-family="monospace" font-size="13" fill="#d4d4d4">  &amp;lt;body&amp;gt;Hello World!&amp;lt;/body&amp;gt;</text>
+  <text x="20" y="160" font-family="monospace" font-size="13" fill="#d4d4d4">&amp;lt;/html&amp;gt;</text>
+  <text x="20" y="180" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker inspect web --format '{{.NetworkSettings.Networks.mynet.IPAddress}}'</text>
+  <text x="20" y="200" font-family="monospace" font-size="13" fill="#d4d4d4">172.18.0.2</text>
+  <text x="20" y="220" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker run --rm alpine sh -c "wget -qO- http://172.18.0.2"</text>
+  <text x="20" y="240" font-family="monospace" font-size="13" fill="#d4d4d4">wget: can't connect to remote host (172.18.0.2): Network unreachable</text>
+  <text x="20" y="260" font-family="monospace" font-size="13" fill="#6a9955"># isolation réseau confirmée</text>
+</svg>
