@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="470">
+  <rect width="800" height="470" fill="#1e1e1e" rx="8"/>
+  <text x="20" y="20" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker build -t my-python-server .</text>
+  <text x="20" y="40" font-family="monospace" font-size="13" fill="#d4d4d4">Step 1/5 : FROM python:3.13-slim</text>
+  <text x="20" y="60" font-family="monospace" font-size="13" fill="#d4d4d4"> ---&gt; a1b2c3d4e5f6</text>
+  <text x="20" y="80" font-family="monospace" font-size="13" fill="#d4d4d4">Step 2/5 : ENV PORT=80</text>
+  <text x="20" y="100" font-family="monospace" font-size="13" fill="#27c93f"> ---&gt; Running in 9f8e7d6c5b4a</text>
+  <text x="20" y="120" font-family="monospace" font-size="13" fill="#d4d4d4">Step 3/5 : COPY start.sh /start.sh</text>
+  <text x="20" y="140" font-family="monospace" font-size="13" fill="#d4d4d4">Step 4/5 : VOLUME /www</text>
+  <text x="20" y="160" font-family="monospace" font-size="13" fill="#d4d4d4">Step 5/5 : EXPOSE 80</text>
+  <text x="20" y="180" font-family="monospace" font-size="13" fill="#d4d4d4">Successfully built 3c2d1e0f9a8b</text>
+  <text x="20" y="200" font-family="monospace" font-size="13" fill="#d4d4d4">Successfully tagged my-python-server:latest</text>
+  <text x="20" y="220" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker run -d --name pyserver -p 8080:80 -v $(pwd)/site:/www my-python-server</text>
+  <text x="20" y="240" font-family="monospace" font-size="13" fill="#4ec9b0">$ curl http://localhost:8080</text>
+  <text x="20" y="260" font-family="monospace" font-size="13" fill="#d4d4d4">&amp;lt;html&amp;gt;&amp;lt;body&amp;gt;Hello World!&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;</text>
+  <text x="20" y="280" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker build -t my-python-server:v2 .</text>
+  <text x="20" y="300" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker history my-python-server:v2</text>
+  <text x="20" y="320" font-family="monospace" font-size="13" fill="#dcdcaa">IMAGE          CREATED         SIZE    CREATED BY</text>
+  <text x="20" y="340" font-family="monospace" font-size="13" fill="#d4d4d4">3c2d1e0f9a8b   2 minutes ago   0B      EXPOSE 80</text>
+  <text x="20" y="360" font-family="monospace" font-size="13" fill="#d4d4d4">8b7a6c5d4e3f   2 minutes ago   0B      VOLUME /www</text>
+  <text x="20" y="380" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker commit pyserver-v2 my-python-server:v3</text>
+  <text x="20" y="400" font-family="monospace" font-size="13" fill="#d4d4d4">sha256:9a8b7c6d5e4f...</text>
+  <text x="20" y="420" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker system prune -af</text>
+</svg>
