@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="470">
+  <rect width="800" height="470" fill="#1e1e1e" rx="8"/>
+  <text x="20" y="20" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker build -t pewpew-fat .</text>
+  <text x="20" y="40" font-family="monospace" font-size="13" fill="#d4d4d4">Successfully built pewpew-fat</text>
+  <text x="20" y="60" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker build -t pewpew-slim .</text>
+  <text x="20" y="80" font-family="monospace" font-size="13" fill="#d4d4d4">Step 1/6 : FROM golang:1.23-alpine AS builder</text>
+  <text x="20" y="100" font-family="monospace" font-size="13" fill="#d4d4d4">Step 2/6 : RUN apk add ...</text>
+  <text x="20" y="120" font-family="monospace" font-size="13" fill="#d4d4d4">Step 3/6 : RUN go install ...</text>
+  <text x="20" y="140" font-family="monospace" font-size="13" fill="#d4d4d4">Step 4/6 : FROM alpine</text>
+  <text x="20" y="160" font-family="monospace" font-size="13" fill="#d4d4d4">Step 5/6 : COPY --from=builder /go/bin/pewpew /usr/bin/pewpew</text>
+  <text x="20" y="180" font-family="monospace" font-size="13" fill="#d4d4d4">Step 6/6 : COPY --from=builder /etc/ssl/certs/... /etc/ssl/certs/</text>
+  <text x="20" y="200" font-family="monospace" font-size="13" fill="#d4d4d4">Successfully built pewpew-slim</text>
+  <text x="20" y="220" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker images | grep pewpew</text>
+  <text x="20" y="240" font-family="monospace" font-size="13" fill="#d4d4d4">REPOSITORY    TAG      IMAGE ID       SIZE</text>
+  <text x="20" y="260" font-family="monospace" font-size="13" fill="#d4d4d4">pewpew-fat    latest   a1b2c3d4e5f6   432MB</text>
+  <text x="20" y="280" font-family="monospace" font-size="13" fill="#d4d4d4">pewpew-slim   latest   f6e5d4c3b2a1   12.4MB</text>
+  <text x="20" y="300" font-family="monospace" font-size="13" fill="#6a9955"># image 35x plus légère</text>
+  <text x="20" y="320" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker run --rm pewpew-slim stress -n 2 http://www.github.com</text>
+  <text x="20" y="340" font-family="monospace" font-size="13" fill="#d4d4d4">Finishing 2 requests...</text>
+  <text x="20" y="360" font-family="monospace" font-size="13" fill="#d4d4d4">Summary:</text>
+  <text x="20" y="380" font-family="monospace" font-size="13" fill="#d4d4d4">  Total:         0.5213 secs</text>
+  <text x="20" y="400" font-family="monospace" font-size="13" fill="#d4d4d4">  Fastest:       0.3012 secs</text>
+  <text x="20" y="420" font-family="monospace" font-size="13" fill="#d4d4d4">  Requests/sec:  3.8369</text>
+</svg>
