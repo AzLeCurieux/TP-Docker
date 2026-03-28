@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="430">
+  <rect width="800" height="430" fill="#1e1e1e" rx="8"/>
+  <text x="20" y="20" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker volume create mysql-data &amp;&amp; docker network create wpnet</text>
+  <text x="20" y="40" font-family="monospace" font-size="13" fill="#d4d4d4">mysql-data</text>
+  <text x="20" y="60" font-family="monospace" font-size="13" fill="#d4d4d4">wpnet</text>
+  <text x="20" y="80" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker run -d --name mysql --network wpnet -e MYSQL_DATABASE=exampledb ...</text>
+  <text x="20" y="100" font-family="monospace" font-size="13" fill="#d4d4d4">c1d2e3f4a5b6...</text>
+  <text x="20" y="120" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker run -d --name wordpress --network wpnet -p 2280:80 ...</text>
+  <text x="20" y="140" font-family="monospace" font-size="13" fill="#d4d4d4">d2e3f4a5b6c1...</text>
+  <text x="20" y="160" font-family="monospace" font-size="13" fill="#4ec9b0">$ curl http://localhost:2280 | head -5</text>
+  <text x="20" y="180" font-family="monospace" font-size="13" fill="#d4d4d4">&amp;lt;!DOCTYPE html&amp;gt;</text>
+  <text x="20" y="200" font-family="monospace" font-size="13" fill="#d4d4d4">&amp;lt;html lang="en-US"&amp;gt;</text>
+  <text x="20" y="220" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker compose up -d</text>
+  <text x="20" y="240" font-family="monospace" font-size="13" fill="#d4d4d4">✔ Network tp6_wpnet         Created</text>
+  <text x="20" y="260" font-family="monospace" font-size="13" fill="#d4d4d4">✔ Volume  tp6_mysql-data    Created</text>
+  <text x="20" y="280" font-family="monospace" font-size="13" fill="#d4d4d4">✔ Container tp6-mysql-1     Started</text>
+  <text x="20" y="300" font-family="monospace" font-size="13" fill="#d4d4d4">✔ Container tp6-wordpress-1 Started</text>
+  <text x="20" y="320" font-family="monospace" font-size="13" fill="#4ec9b0">$ docker compose ps</text>
+  <text x="20" y="340" font-family="monospace" font-size="13" fill="#dcdcaa">NAME                  STATUS</text>
+  <text x="20" y="360" font-family="monospace" font-size="13" fill="#27c93f">tp6-mysql-1           running (healthy)</text>
+  <text x="20" y="380" font-family="monospace" font-size="13" fill="#27c93f">tp6-wordpress-1       running</text>
+</svg>
